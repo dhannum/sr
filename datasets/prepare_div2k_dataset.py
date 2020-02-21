@@ -48,7 +48,7 @@ def main():
         args.crop_width =  args.crop_width // args.scale_factor * args.scale_factor
 
     examples_num = 0
-    writer = tf.python_io.TFRecordWriter(os.path.join(args.dataset_folder, 'dataset.tfrecords'))
+    writer = tf.io.TFRecordWriter(os.path.join(args.dataset_folder, 'dataset.tfrecords'))
     hr_image_fns = os.listdir(os.path.join(args.div2k_folder, 'hr'))
     for i in tqdm(range(len(hr_image_fns)), total=len(hr_image_fns), unit='image'):
         image = cv2.imread(os.path.join(args.div2k_folder, 'hr', hr_image_fns[i]))

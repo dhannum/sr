@@ -218,7 +218,7 @@ def main():
 
     print("Preparing dataset")
     examples_num = 0
-    writer = tf.python_io.TFRecordWriter(os.path.join(args.dataset_folder, 'dataset.tfrecords'))
+    writer = tf.io.TFRecordWriter(os.path.join(args.dataset_folder, 'dataset.tfrecords'))
     for i in range(len(video_list)):
         print('Processing ', video_list[i], ', ', str(i + 1), '/', str(len(video_list)))
         examples_num += process_video(video_list[i], scd.scene_changes, writer, args)
